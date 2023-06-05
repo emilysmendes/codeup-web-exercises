@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Warm Ups</title>
+</head>
+<body>
+
+<script>
+    "use strict";
+
+    /* TODO
+
+      Write a function, addTen, that takes in an input. If the input is a number,
+      return the input plus ten and false otherwise.
+
+      Examples:
+
+      addTen(0); // returns 10
+      addTen(10); // returns 20
+      addTen('bob'); // returns false
+
+     */
+
+
+    // write a function "addTen"
+    // take in an input (x)
+    // is the input a number? check
+    // IF yes, return input + 10
+    // IF no, return "false"
+
+
+// function addTen(x) {
+//     if (typeof x === 'number') {
+//         return x + 10;
+//     } else {
+//         return "false"
+//     }
+// }
+//
+// console.log(addTen(6));
+
+
+//     Write a function, makeUpperCase, that takes in an input and returns the input in uppercase if it is a string. If the input is not a string, return false.
+
+function makeUpperCase (input) {
+    if (typeof input === 'string') {
+        return input.toUpperCase()
+    } else {
+        return false;
+    }
+}
+
+    console.log(makeUpperCase('emily'));
+
+
+</script>
+
+</body>
+</html>

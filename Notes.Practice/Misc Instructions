@@ -1,0 +1,9 @@
+How to push files to GitHub
+
+1. open terminal (command + Space)
+2. open folder you want to push (type: cd *name of folder*)
+3. type: git add . [ "add ." means all files in folder]
+4. type: git commit -m "*add comment here describing what you are doing*"
+5. type: git push origin main
+6. enter password
+
