@@ -154,4 +154,25 @@
 // for (let y = 20; y >= 1; --y); {
 //     console.log(y)
 // }
+//
+// const me= {};
+// me.hair= 'brown'
+// me.eye = 'brown'
+//
+// console.log(me.hair)
+// console.log(me)
+// console.log(me["eye"])
 
+// Make a function named isVowel(letter)
+function isVowel(letter) {
+    if (letter === ['a', 'e', 'i', 'o', 'u']) {
+        return letter + " is a vowel!";
+    } else {
+        return letter + " is not a vowel!";
+    }
+}
+
+console.log(isVowel('a'));
+console.log(isVowel('e'));
+console.log(isVowel('7'));
+console.log(isVowel('I'));
