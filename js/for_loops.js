@@ -10,9 +10,9 @@
 // 7 x 8 = 56
 // 7 x 9 = 63
 // 7 x 10 = 70
-
+\
 //
-for (let n = 1; n <=10; n++) {
+for (let n = 1; n <= 10; n++) {
     let i = 7;
     let showMultiplicationTable = i * n;
     console.log(`${i} * ${n} = ${showMultiplicationTable}`)
@@ -33,7 +33,7 @@ for (let n = 1; n <=10; n++) {
 // ...
 //
 for (let x = 1; x <= 10; x++) {
-    let count = Math.floor(Math.random() * (200-20 + 1) + 20)
+    let count = Math.floor(Math.random() * (200 - 20 + 1) + 20)
     if (count % 2 === 0) {
         console.log(count + " is even");
     } else {
@@ -54,7 +54,6 @@ for (let x = 1; x <= 10; x++) {
 // randomEvenOrOdd ():
 
 
-
 // Create a for loop that uses console.log to create the output shown below.
 //  1
 // 22
@@ -68,7 +67,7 @@ for (let x = 1; x <= 10; x++) {
 
 for (let i = 1; i <= 9; ++i) {
     let result = [];
-    for (a = 1; a <= i; ++a){
+    for (a = 1; a <= i; ++a) {
         result.push(i);
     }
     console.log(result.join(""));

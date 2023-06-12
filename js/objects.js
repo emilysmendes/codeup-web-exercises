@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -12,12 +12,12 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-const person = {
+    const person = {
         firstName: "Emily",
         lastName: "Mendes",
-        };
+    };
 
-console.log(person);
+    console.log(person);
 
     /**
      * TODO:
@@ -31,7 +31,7 @@ console.log(person);
     person.sayHello = function () {
         return "Hello from Emily Mendes!"
     };
-console.log(person.sayHello());
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -71,17 +71,16 @@ console.log(person.sayHello());
     ]
 
 
-   // function hebDiscountString(shopper) {
-   //  if(shopper.amount > 200) {
-   //      console.log ((shopper.name)  + " spent " + (shopper.amount)+ ".", "You got the discount! Your new total is " + ($(shopper.amount)* 0.88).toFixed(2), "You saved: " + $((shopper.amount) * 0.12.toFixed(2)));
-   //  } else {
-   //      console.log("You didn't get the discount. Your total is: " +  (shopper.amount));
-   //  }
-   //  }
-   //
-   //
-   //  hebDiscountString(shopper);
-
+    // function hebDiscountString(shopper) {
+    //  if(shopper.amount > 200) {
+    //      console.log ((shopper.name)  + " spent " + (shopper.amount)+ ".", "You got the discount! Your new total is " + ($(shopper.amount)* 0.88).toFixed(2), "You saved: " + $((shopper.amount) * 0.12.toFixed(2)));
+    //  } else {
+    //      console.log("You didn't get the discount. Your total is: " +  (shopper.amount));
+    //  }
+    //  }
+    //
+    //
+    //  hebDiscountString(shopper);
 
 
     /** TODO:
@@ -98,7 +97,7 @@ console.log(person.sayHello());
      */
 
 
-const books = [
+    const books = [
         {
             title: "Harry Potter",
             author: {
@@ -162,12 +161,12 @@ const books = [
      *      ...
      */
 
-   books.forEach((book, index) => {
-       console.log(`Book # ${index + 1}`)
-       console.log(`Title: ${books[index].title}`)
-       console.log(`Author: ${book.author.firstName} ${book.author.lastName}`)
-       if(index < books.length-1)
-           console.log("---")
+    books.forEach((book, index) => {
+        console.log(`Book # ${index + 1}`)
+        console.log(`Title: ${books[index].title}`)
+        console.log(`Author: ${book.author.firstName} ${book.author.lastName}`)
+        if (index < books.length - 1)
+            console.log("---")
     })
 
     /**
@@ -181,7 +180,7 @@ const books = [
      *   `showBookInfo` function.
      */
 
-    function createBook (title, authorFirstName, authorLastName) {
+    function createBook(title, authorFirstName, authorLastName) {
         return {
             title: title,
             author: {
