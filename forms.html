@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<h1>Register With Us</h1>
+<form method="POST" action="https://request-inspector.glitch.me/">
+  <label for ="email">
+  <input type="email" name="email" placeholder="email address" required>
+  </label>
+  <label for ="password">
+  <input type="password" name="password" placeholder="password"required>
+  </label>
+  <br>
+  <label for ="bio">
+    <textarea name="bio" placeholder="Enter your bio"></textarea>
+  </label>
+  <br>
+ <h3>How did you hear about us?</h3>
+  <label for ="billboard">
+  Billboard<input type="radio" id="billboard" name="media1" value="Billboard">
+  </label>
+  <br>
+  <label for ="radio advertisement">
+  Radio Advertisement <input type="radio" name="media2" value="Radio Advertisement">
+  </label>
+  <br>
+  <label for ="internet advertisement">
+  Internet Advertisement<input type="radio" name="media3" value="Internet Advertisement">
+  </label>
+  <br>
+  <label for ="other">
+  Other<input type="radio" name="media4" value="Other">
+  </label>
+  <br>
+  <h3>Which web browser are you using?</h3>
+  <select name="web browser">
+    <label for = "Firefox">
+      <option>Firefox</option>
+    </label>
+    <label for = "Chrome">
+    <option>Chrome</option>
+    </label>
+    <label for = "Safari">
+    <option>Safari</option>
+    </label>
+    <label for = "Internet Explorer">
+    <option>Internet Explorer</option>
+    </label>
+    <label for = "Other">
+    <option>Other</option>
+    </label>
+  </select>
+  <button>Submit</button>
+</form>
+</body>
+</html>

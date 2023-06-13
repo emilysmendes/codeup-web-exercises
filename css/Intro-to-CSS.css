@@ -1,0 +1,9 @@
+header {
+    background-color:lightgray;
+}
+#navigation {
+    border: 1px solid red;
+}
+#navigation li {
+    display:inline-block;
+}
