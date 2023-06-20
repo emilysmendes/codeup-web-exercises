@@ -4,7 +4,41 @@ line
 comment
 */
 
+
 .fancy-header {
-    color: purple; /* single line comment */
+    color: #a57a4f; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+    color: #a57a4f;
+}
+
+body {
+    background-color: tan;
+    background-image: url('/css/img/white.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Adelle Sans Devanagari', Monospaced, fantasy;
+;
+}
+
+ul, ol {
+    list-style-type: "🔔";
+}
+
+table, th, td {
+
+    padding: 0.2em;
+    font-size: 1em;
+    border: 0.2em solid #a57a4f;
+    text-align: justify-all;
+    width: 50rem;
+}
+
+a:visited {
+    color: #a57a4f;
 }

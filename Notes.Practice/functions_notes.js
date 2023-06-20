@@ -86,12 +86,12 @@ const sayHello = function () {
 sayHello();
 
 //Arrow Function
-arrow acts as a 'function' action key
+// arrow acts as a 'function' action key
 const sayHello = () => {console.log("Hello")}
 
 sayHello();
 
-(function () {
+function dog() {
     const dog1 = "darla";
 
     function walk() {
@@ -99,13 +99,13 @@ sayHello();
         console.log(dog1)
 
     }
-    function walk2() {
+    function walk1() {
         const dog1= "Spanky";
         console.log(dog1)
     }
     walk()
     walk1()
-})
+}
 
 function addSum(num1, num2) {
     console.log(num1 + num2)

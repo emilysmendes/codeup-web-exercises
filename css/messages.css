@@ -1,0 +1,34 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+div {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    padding: 0.7em;
+    margin: 1em;
+}
+
+#blue {
+    background-color: #cbe2ff;
+    color: #1c3aad;
+}
+
+#green {
+    background-color: #d5fcd5;
+    color: green;
+}
+
+#yellow {
+    background-color: #fcfcc2;
+    color: #9a9342;
+}
+
+#red {
+    background-color: #ffd5d5;
+    color: darkred;
+}
