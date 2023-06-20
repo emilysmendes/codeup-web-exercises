@@ -192,3 +192,25 @@ function sumIsEqual (input1, input2, input3) {
 }
 
 console.log(sumIsEqual('1',2,3));
+
+// Write a function, returnUserObject, that takes in three String arguments: a username, password, and email. The function should return a user object with username, password and email properties.
+//
+// returnUserObject('jreich', 'password123', 'jreich@email.com') // returns...
+//
+// {
+//     username: 'jreich',
+//         password: 'password123',
+//     email: 'jreich@email.com'
+// }
+//
+// Assume all inputs are non-empty strings. The order of the properties on the object output do not matter but the order of the INPUTS do matter.
+
+function returnUserObject (userName, userPassword, userEmail) {
+    const user = {};
+    user.username = userName;
+    user.userpassword = userPassword;
+    user.email = userEmail;
+    return user;
+}
+
+console.log(returnUserObject());
