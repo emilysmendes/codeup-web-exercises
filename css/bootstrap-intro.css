@@ -1,0 +1,14 @@
+:root {
+    --primary-text: ;
+    --primary-color: #203320;
+}
+
+body {
+    font-family: 'playfair display', sans-serif;
+    background-color: #fff;
+}
+
+.px-3 {
+    color: var(--primary-color);
+
+}

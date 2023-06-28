@@ -180,18 +180,18 @@
 // Write a function, sumIsEqual, that takes in three inputs. The function should return
 // true if the sum of the first two inputs are equal to the third input. If any of the
 // inputs are not numbers, return false.
-
-function sumIsEqual (input1, input2, input3) {
-    if (input1 + input2 !== input3) {
-        return false;
-    } else if (typeof input1 === 'number' & typeof input2 === 'number' && typeof input3 === 'number'){
-        return false;
-    } else {
-        return true;
-    }
-}
-
-console.log(sumIsEqual('1',2,3));
+//
+// function sumIsEqual (input1, input2, input3) {
+//     if (input1 + input2 !== input3) {
+//         return false;
+//     } else if (typeof input1 === 'number' & typeof input2 === 'number' && typeof input3 === 'number'){
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+//
+// console.log(sumIsEqual('1',2,3));
 
 // Write a function, returnUserObject, that takes in three String arguments: a username, password, and email. The function should return a user object with username, password and email properties.
 //
@@ -205,12 +205,175 @@ console.log(sumIsEqual('1',2,3));
 //
 // Assume all inputs are non-empty strings. The order of the properties on the object output do not matter but the order of the INPUTS do matter.
 
-function returnUserObject (userName, userPassword, userEmail) {
-    const user = {};
-    user.username = userName;
-    user.userpassword = userPassword;
-    user.email = userEmail;
-    return user;
+// function returnUserObject (userName, userPassword, userEmail) {
+//     const user = {};
+//     user.username = userName;
+//     user.userpassword = userPassword;
+//     user.email = userEmail;
+//     return user;
+// }
+//
+// console.log(returnUserObject());
+
+// Create a function, returnProduct, that takes in an array of numbers and returns the product of all the numbers.
+//     Assume all element in the input array are valid numbers. Assume all array inputs have at least 1 number.
+// returnProduct([1, 2, 3]) // returns 1 * 2 * 3 = 6
+// returnProduct([3, 3, 3]) // returns 3 * 3 * 3 = 27
+// returnProduct([4, 1, 2]) // returns 4 * 1 * 2 = 8
+// returnProduct([4, 0, 2]) // returns 4 * 0 * 2 = 0
+// returnProduct([5, 3, 2]) // returns 5 * 3 * 2 = 30
+// function returnProduct (nums) {
+//
+// }
+//
+// let product = 1;
+// for (let i = 0; i < nums.length; i+= 1) {
+//     product*= 1;
+//
+// }
+//
+//
+// returnProduct();
+
+
+// Create a function, returnTotalSales, that takes in an array of sales data objects and returns the sum of all
+// totalItemsSold properties. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+// property.
+//
+// Create a function, returnTotalSales, that takes in an array of sales data objects and returns the sum of all
+// totalItemsSold properties. Assume all elements in the input array are valid sales data objects with a totalItemsSold
+// property.
+//
+// //         EXAMPLE...
+// // //
+// const salesData = [
+//     { // index 0
+//         month: 'January',
+//         totalItemsSold: 0
+//     },
+//     { // index 1
+//         month: 'February',
+//         totalItemsSold: 5
+//     },
+//     { // index 2
+//         month: 'March',
+//         totalItemsSold: 2
+//     },
+//     { // index 3
+//         month: 'April',
+//         totalItemsSold: 10
+//     },
+//     { // index 4
+//         month: 'May',
+//         totalItemsSold: 30
+//     }
+// ];
+//
+// function returnTotalSales(salesData) {
+//
+//     let sum = 0;
+//
+//     // for
+//
+//     // for (let i = 0; i < salesData.length; i += 1) {
+//     //   sum += salesData[i].totalItemsSold;
+//     // }
+//     // forEach
+//     salesData.forEach(element => {
+//         sum += element.totalItemsSold;
+//     });
+//
+//     return sum;
+//
+//     // const total = salesData[0].totalItemsSold +
+//     //         salesData[1].totalItemsSold +
+//     //         salesData[2].totalItemsSold +
+//     //         salesData[3].totalItemsSold +
+//     //         salesData[4].totalItemsSold;
+//     // return total;
+// }
+// //
+// console.log(returnTotalSales(salesData)); // returns 47
+//
+// const total = salesData[0].totalItemsSold +
+//       salesData[1].totalItemsSold +
+//       salesData[2].totalItemsSold +
+//       salesData[3].totalItemsSold +
+//       salesData[4].totalItemsSold;
+//
+// console.log(total);
+//
+// const avg = total/ salesData.length
+//
+// console.log(avg);
+//
+// ================================= WARM UP
+//
+// Create a function, returnAdmins, that takes in an array of user objects
+// and returns an array of only the admin user objects. Assume the array
+// has at least one user object and all elements have an isAdmin property.
+//
+//     Example:
+
+
+const users = [
+
+    {
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
+    },
+    {
+        username: 'cindy123',
+        password: 'hello123',
+        email: 'cindy123@email.com',
+        isAdmin: false
+    },
+    {
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
+    },
+    {
+        username: 'kyle123',
+        password: 'letmein',
+        email: 'kyle123@email.com',
+        isAdmin: false
+    }
+]
+
+function returnAdmins(users) {
+    const admins = [];
+    for (let i = 0; i < users.length; i += 1) {
+        if (users[i].isAdmin) {
+            admins.push(users[i]);
+        }
+    }
+    return admins;
 }
 
-console.log(returnUserObject());
+console.log(returnAdmins(users));
+
+/*
+
+returnAdmins(users) returns...
+
+[
+
+    {
+        username: 'fred123',
+        password: 'letmein',
+        email: 'fred123@email.com',
+        isAdmin: true
+    },
+    {
+        username: 'kathy123',
+        password: 'letmein',
+        email: 'kathy123@email.com',
+        isAdmin: true
+    }
+]
+
+*/
