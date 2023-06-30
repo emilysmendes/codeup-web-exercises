@@ -111,41 +111,41 @@
 // //     DOUBLE GOLD STAR BONUS
 // //
 // //     Allow unit conversion to metric system units
-
-// TODO - write a while loop that prints your name 10 times
-
-/*
-    TODO CHALLENGE - write a function, getNum1To10 that returns a number between 1 and 10 from the user.
-      Keep prompting them until a valid number is given
- */
-// let input = 1
 //
-// while (input <= 10)  {
-//     console.log("Emily");
-//     input++;
-// };
-
-/*
-        TODO - write a do-while loop that will alert the current date and time and
-          continue checking with the user if they want to see the latest time.
-
-          Current date can be created with new Date().toLocaleString()
-     */
+// // TODO - write a while loop that prints your name 10 times
 //
-// let willContinue = true;
-// do {
-//    willContinue= confirm ("It is currently: " + Date().toLocaleString() + ". Would you like to see the latest time?")
-//     }
-// while (willContinue);
-
-/*
-    TODO - write a for loop that prints all even numbers from 2 to 100
-
-
-    TODO - write a for loop that prints all integers from 20 down to 1
- */
-
-'use strict'
+// /*
+//     TODO CHALLENGE - write a function, getNum1To10 that returns a number between 1 and 10 from the user.
+//       Keep prompting them until a valid number is given
+//  */
+// // let input = 1
+// //
+// // while (input <= 10)  {
+// //     console.log("Emily");
+// //     input++;
+// // };
+//
+// /*
+//         TODO - write a do-while loop that will alert the current date and time and
+//           continue checking with the user if they want to see the latest time.
+//
+//           Current date can be created with new Date().toLocaleString()
+//      */
+// //
+// // let willContinue = true;
+// // do {
+// //    willContinue= confirm ("It is currently: " + Date().toLocaleString() + ". Would you like to see the latest time?")
+// //     }
+// // while (willContinue);
+//
+// /*
+//     TODO - write a for loop that prints all even numbers from 2 to 100
+//
+//
+//     TODO - write a for loop that prints all integers from 20 down to 1
+//  */
+//
+// 'use strict'
 
 // for (let x = 2; x <= 100, x += 2;) {
 //     console.log(x)
@@ -385,66 +385,96 @@
 // The function should return true if the neighborhood object is desireable and false otherwise.
 
 // example data...
-
-    const neighborhood1 = {
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: 22
-};
-
-const neighborhood2 = {
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "high",
-    schools: 24
-}
-
-const neighborhood3 = {
-    neighborhood: "Oak Mountain",
-    medianHomePrice: 290000,
-    pool: false,
-    tennis: false,
-    crimeRate: "low",
-    schools: 24
-}
-
-const neighborhood4 = {
-    neighborhood: "Ginormous Acres",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: 27
-}
-
-function goodNeighborhoods (neighborhood) {
-    // console.log(neighborhood.medianHomePrice);
-    // console.log(neighborhood.crimeRate);
-    // console.log(neighborhood.schools);
-
-    const isRightPrice= neighborhood.medianHomePrice < 300000;
-    const isRightCrimeRate = neighborhood.crimeRate === 'low';
-    const isRightSchool= neighborhood.schools >= 24;
-
-    const isDesireable = isRightCrimeRate && isRightSchool && isRightPrice;
-
-    return isDesireable;
-}
-
-// OR
-
+//
+//     const neighborhood1 = {
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 22
+// };
+//
+// const neighborhood2 = {
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "high",
+//     schools: 24
+// }
+//
+// const neighborhood3 = {
+//     neighborhood: "Oak Mountain",
+//     medianHomePrice: 290000,
+//     pool: false,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: 24
+// }
+//
+// const neighborhood4 = {
+//     neighborhood: "Ginormous Acres",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: 27
+// }
+//
 // function goodNeighborhoods (neighborhood) {
-//   return neighborhood.medianHomePrice < 300000 &&
-//          neighborhood.crimeRate === 'low' &&
-//          neighborhood.schools >= 24;
-//      }
+//     // console.log(neighborhood.medianHomePrice);
+//     // console.log(neighborhood.crimeRate);
+//     // console.log(neighborhood.schools);
+//
+//     const isRightPrice= neighborhood.medianHomePrice < 300000;
+//     const isRightCrimeRate = neighborhood.crimeRate === 'low';
+//     const isRightSchool= neighborhood.schools >= 24;
+//
+//     const isDesireable = isRightCrimeRate && isRightSchool && isRightPrice;
+//
+//     return isDesireable;
+// }
+//
+// // OR
+//
+// // function goodNeighborhoods (neighborhood) {
+// //   return neighborhood.medianHomePrice < 300000 &&
+// //          neighborhood.crimeRate === 'low' &&
+// //          neighborhood.schools >= 24;
+// //      }
+//
+// console.log(goodNeighborhoods(neighborhood1));
+// console.log(goodNeighborhoods(neighborhood2));
+// console.log(goodNeighborhoods(neighborhood3));
+// console.log(goodNeighborhoods(neighborhood4));
+//
+// ================================= WARM UP
 
-console.log(goodNeighborhoods(neighborhood1));
-console.log(goodNeighborhoods(neighborhood2));
-console.log(goodNeighborhoods(neighborhood3));
-console.log(goodNeighborhoods(neighborhood4));
+//
+// Write a function, returnLargestStudentCount, that takes in an array of classes returns the number of students in the largest class.
+// Assume at least one class object will be present in the input array with students property set to a valid positive integer.
+
+//     let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22},
+//     {class: "4th grade history", students: 30},
+//     {class: "10th grade history", students: 25}
+// ];
+//
+// // ** sort array in highest value
+// // ** return first input of array
+//
+// let highestStudentCount = 0;
+// for (let i =0; i < classes.length; i +=1) {
+//     if (highestStudentCount < classes[i].students) {
+//         highestStudentCount = classes[i].students;
+//     }
+// }
+//
+// console.log(highestStudentCount); // returns 30
+
+ADDITIONAL EXAMPLE:
+
+function returnLargestStudentCount ()

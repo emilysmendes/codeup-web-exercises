@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="css/order-pizza.css">
 </head>
 <body>
-    <div class="container page-wrapper py-3 px-0">
+    <div class="container page-wrapper py-3 px-0 mb-2">
         <div class="row d-flex inline">
-            <div class="column d-flex-column shrink">
+            <div class="column d-flex-column grow">
                 <h4>Pizza World</h4><h5>Order Online</h5><h6>Menu</h6>
                 <button type="button" class="btn btn-outline-secondary" style="height: 2.25em; width: 15em"disabled>Zip Code</button>
                 <button type="button" class="btn btn-outline-primary">Search stores near you!</button>
-<!--            </div>-->
-<!--            <div class="column d-flex.column ">-->
+            </div>
+            <div class="column d-flex.column shrink">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                 </svg>
@@ -33,56 +33,61 @@
             <h1 id="top">Build your own pizza!</h1>
             <div class="row">
                 <div class="col">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Size and Crust</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cheese and Sauce</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Toppings</a>
-                        </li>
-                    </ul>
-
-                    <div class="col border border-2">
-                        <p class="bg-primary text-white p-2">Choose Size and Crust</p>
-                        <div class="ms-5 card " style="width: 90%">
-                            <div class="card-header">
-                                Hand Tossed
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Garlic seasoned Crust with a rich, buttery taste.</li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustFirstRadio">
-                                    <label class="form-check-label" for="crustFirstRadio">Small (10")</label>
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustSecondRadio">
-                                    <label class="form-check-label" for="crustSecondRadio">Medium (12")</label>
-                                </li>
-                            </ul>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Size and Crust</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Cheese and Sauce</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Toppings</button>
                         </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                            <div class="col border border-2">
+                                <p class="bg-primary text-white p-2">Choose Size and Crust</p>
+                                <div class="ms-5 card mb-4" style="width: 90%">
+                                    <div class="card-header">
+                                        Hand Tossed
+                                    </div>
+                                    <ul class="list-group list-group-flush mb-0">
+                                        <li class="list-group-item">Garlic seasoned Crust with a rich, buttery taste.</li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustFirstRadio">
+                                            <label class="form-check-label" for="crustFirstRadio">Small (10")</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustSecondRadio">
+                                            <label class="form-check-label" for="crustSecondRadio">Medium (12")</label>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                        <div class="card ms-5" style="width: 90%;">
-                            <div class="card-header">
-                                Crispy Thin
+                                <div class="card ms-5" style="width: 90%;">
+                                    <div class="card-header">
+                                        Crispy Thin
+                                    </div>
+                                    <ul class="list-group list-group-flush mb-0">
+                                        <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustThirdRadio">
+                                            <label class="form-check-label" for="crustThirdRadio">Medium (12")</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustFourthRadio">
+                                            <label class="form-check-label" for="crustFourthRadio">Large (14")</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end mt-3   border-top border-2 bg-light py-2 ">
+                                <button class="btn btn-primary me-md-2 align-items-center " type="button">Next Step ></button>
                             </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustThirdRadio">
-                                    <label class="form-check-label" for="crustThirdRadio">Medium (12")</label>
-                                </li>
-                                <li class="list-group-item">
-                                    <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="crustFourthRadio">
-                                    <label class="form-check-label" for="crustFourthRadio">Large (14")</label>
-                                </li>
-                            </ul>
                         </div>
-
-                        <div class="card-footer d-grid gap-2 d-md-flex justify-content-md-end mt-3   border-top border-2 bg-light py-2">
-                        <button class="btn btn-primary me-md-2 align-items-center " type="button">Next Step ></button>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                            <div class="col">
+                                fjnnckwmkefmkvm
+                                </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+                    </div>
                     </div>
                     </div>
                 </div>
