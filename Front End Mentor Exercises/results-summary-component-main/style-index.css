@@ -1,0 +1,24 @@
+:root {
+    --lightRed: #FF5757FF;
+    --orangeyYellow: #FFB01FFF;
+    --greenTeal: #00BD91FF;
+    --cobaltBlue: #1125D4FF;
+    --lightSlateBlueBackground: #7857FFFF;
+    --lightRoyalBlueBackground: #2E2BE9FF;
+    --violetBlueCircle: #4E21CAFF;
+    --persianBlueCircle: #2421CA00;
+    --white: #ffffff;
+    --paleBlue: #EBF1FFFF;
+    --lightLavender: #C8C7FFFF;
+    --darkGrayBlue: #303B5AFF;
+    --paragraphFontSize: 18px;
+    --mediumFont: 'hanken 500', sans-serif;
+    --boldFont: 'hanken 700 bold', sans-serif;
+    --xlBoldFont: 'hanken 800 bold', sans-serif;
+
+}
+
+body {
+    background: url('assets/images/wallpaper.jpeg') center center fixed;
+    background-size: cover;
+}
