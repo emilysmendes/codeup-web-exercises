@@ -69,57 +69,103 @@
 //     });
 
 
+// "use strict";
+//
+//  // BODY //
+// $('body')
+//     .css('background-image', "url('../css/img/matrix image.gif')")
+//     .css('background-repeat', 'repeat')
+//     .css('background-size', 'cover');
+//
+// // TEXT
+// $('#main-header, #main-text, #instructions')
+//     .css('text-align', 'center')
+//     .css('font-family', 'IBM Plex Mono')
+//     .css('color', '#ffffff')
+//     .css('margin-top', '80px');
+//
+// //HIDDEN MESSAGE
+// $('#hidden-message').hide()
+//
+//
+// $(document).keyup(function(event){
+//     console.log(event.keyCode);
+// });
+//
+// function onKonamiCode(cb) {
+//     var input = '';
+//     var key = '3838404037393739666513';
+//     document.addEventListener('keydown', function (e) {
+//         input += ("" + e.keyCode);
+//         if (input === key) {
+//             return cb();
+//         }
+//         if (!key.indexOf(input)) return;
+//         input = ("" + e.keyCode);
+//     });
+// }
+//
+// onKonamiCode(function () {
+//     alert('You gained 30 lives!')
+//     $('body')
+//         .css('background-image', "url('../css/img/cat matrix.jpeg')")
+//         .css('object-fit', 'cover')
+//         .css('background-size', 'cover')
+//         .css('background-repeat', 'no-repeat');
+//
+//
+//     $('#main-header, #main-text, #instructions').hide()
+//     $('#hidden-message').show()
+//         .css('text-align', 'center')
+//         .css('font-family', 'IBM Plex Mono')
+//         .css('color', '#ffffff')
+//         .css('margin-top', '80px');
+// });
+
 "use strict";
 
- // BODY //
-$('body')
-    .css('background-image', "url('../css/img/matrix image.gif')")
-    .css('background-repeat', 'repeat')
-    .css('background-size', 'cover');
-
-// TEXT
-$('#main-header, #main-text, #instructions')
-    .css('text-align', 'center')
-    .css('font-family', 'IBM Plex Mono')
-    .css('color', '#ffffff')
-    .css('margin-top', '80px');
-
-//HIDDEN MESSAGE
-$('#hidden-message').hide()
+// $(() => {
+//     $('dd').addClass('invisible');
+//     $('#toggle-button').on('click', function () {
+//         $('dd').toggleClass('invisible');
+//     });
+//
+// })
 
 
-$(document).keyup(function(event){
-    console.log(event.keyCode);
+//                          HOW TO DO IT WITH JQUERY
+// $(()=>{
+//     $('body').append(
+//         '<a href="#">Space Magic</a>'
+//     )
+//     $('a').on('click', ()=> {
+//         $('dd').toggleClass('invisible')
+//     })
+// })
+//
+// $('dt').on('click', function () {
+//     $(this).toggleClass('highlighted')
+// })
+
+//                  HOW TO DO IT IN JS (VANILLA JAVASCRIPT)
+const hideContent = document.createElement('a');
+hideContent.innerText = 'Space Magic';
+
+const bodyElement = document.querySelector('body');
+bodyElement.appendChild(hideContent);
+
+const ddElements = document.querySelectorAll('dd');
+hideContent.addEventListener('click', ()=> {
+    ddElements.forEach((ddElements) => {
+        ddElements.classList.toggle('invisible');
+    });
 });
 
-function onKonamiCode(cb) {
-    var input = '';
-    var key = '3838404037393739666513';
-    document.addEventListener('keydown', function (e) {
-        input += ("" + e.keyCode);
-        if (input === key) {
-            return cb();
-        }
-        if (!key.indexOf(input)) return;
-        input = ("" + e.keyCode);
+const dtElements = document.querySelectorAll('dt');
+dtElements.forEach((dtElement) => {
+    dtElement.addEventListener('click', () => {
+        dtElement.classList.toggle('highlighted')
     });
-}
-
-onKonamiCode(function () {
-    alert('You gained 30 lives!')
-    $('body')
-        .css('background-image', "url('../css/img/cat matrix.jpeg')")
-        .css('object-fit', 'cover')
-        .css('background-size', 'cover')
-        .css('background-repeat', 'no-repeat');
-
-
-    $('#main-header, #main-text, #instructions').hide()
-    $('#hidden-message').show()
-        .css('text-align', 'center')
-        .css('font-family', 'IBM Plex Mono')
-        .css('color', '#ffffff')
-        .css('margin-top', '80px');
 });
 
 
