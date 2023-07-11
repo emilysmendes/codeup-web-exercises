@@ -524,29 +524,8 @@ const runners = [
 //     { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
 // ]
 
-function calculateLapTimeAverage () {
-    // if (runners.lapTimes[0] > runners.lapTimes[1])
-    //     runners.lapTimes.sort((a,b) => a-b)
-    // let sum = 0
-    // for (let i = runners.lapTimes[0]; i <= runners.lapTimes[1]; i++)
-    //     sum += i
-    // return sum
-    console.log(runners.lapTimes)
-
-}
-
-console.log(runners.lapTimes)
-
-function getTopRunners () {
-    for (let i =0; i < runners.length; i ++) {
-        return runners.name
-    }
-}
-
-
 // BONUS: Each runner in the resulting array should be represented as an
 // object containing only the name and age properties.
-
 
 // Expected Bonus Output:
 //     [
@@ -554,3 +533,56 @@ function getTopRunners () {
 //         { name: "Charlie", age: 19 },
 //         { name: "Eve", age: 17 }
 //     ]
+
+//!-- WARM UP SOLUTION --!//
+function getTopRunners(runnersArray) {
+    // declare topRunners array
+    let topRunners = [];
+
+    // loop through every piece of our runnersArray
+    for(let runner of runnersArray) {
+        // check if top runner
+        if(calculateLapTimeAverage(runner.lapTimes) <= 50) {
+            // if true, add to topRunners
+            topRunners.push(runner);
+//
+//
+//             // bonus:
+//             const topRunner = {
+//                 name: runner.name,
+//                 age: runner.age
+//             };
+//             topRunners.push(topRunner);
+//         }
+//         // if not, do nothing
+//     }
+//
+             return topRunners;
+//     // if there are no top runners, this will be an empty array
+//    return topRunners;
+// }
+//
+//
+// function calculateLapTimeAverage(lapTimesArray) {
+//     let total = 0;
+//     let count = 0;
+//     // loop through array
+//     for(let lapTime of lapTimesArray) {
+//         // record the total amount and the count
+//         total += lapTime;
+//         count++;
+//     }
+//
+//     // return average
+//     return total / count;
+// }
+//
+// console.log(getTopRunners(runners));
+
+// Refactor your code from yesterday's warmup to return just the
+// top runner
+
+// Expected output:
+// { name: 'Eve', age: 26, lapTimes: [47.7, 45.9, 46.6, 48.3] }
+
+
