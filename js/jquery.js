@@ -122,7 +122,7 @@
 //         .css('margin-top', '80px');
 // });
 
-"use strict";
+// "use strict"nlk
 
 // $(() => {
 //     $('dd').addClass('invisible');
@@ -168,4 +168,32 @@ dtElements.forEach((dtElement) => {
     });
 });
 
+
+
+
+
+
+// Create a button that, when clicked, makes the last li in each ul have a yellow background.
+//
+//     When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+//
+//     When any list item is clicked, first li of the parent ul should have a font color of blue.
+
+                            // JQUERY //
+$(() => {
+    // $('body').append(
+    //     `<button>Highlight</button>`
+    //  )
+    $('#yellow-btn').on('click', function () {
+        $('ul').each(function (index, ul) {
+            $(ul).children().last().css('background-color', 'yellow')
+        })
+    })
+    $('h3').on('click', function () {
+        $(this).next('ul').children().css('font-weight', 'bold');
+    })
+    $('li').on('click', function () {
+        $(this).parent().children().first().css('color', 'blue')
+    });
+})
 
