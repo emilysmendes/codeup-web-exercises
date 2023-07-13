@@ -812,24 +812,81 @@ const hogwartsHouses = [
     }
 ]
 
-const loopHeads = (heads) => {
-    let headsString = ' '
-    for(const head of heads) {
-        headsString += `${head.firstName} ${head.firstName}\n`
+function slytherinRules (hogwartsHousesArray) {
+    for(const houseInfo of hogwartsHousesArray) {
+        console.log(`house name: ${houseInfo.name}`);
+        console.log(houseInfo.animal)
+        console.log(houseInfo.founder)
+        console.log(houseInfo.commonRoom)
+
+        console.log(houseInfo)
     }
-    return headsString;
-}
-const logHouseInfo = (houses) => {
-    //loop through each item in the house array
-    houses.forEach((house) => {
-        console.log(`
-        Hogwarts House: ${house.name}
-        Animal: ${house.animal}
-        Founder: ${house.founder}
-        Common Room: ${house.commonRoom}
-        House Head: \n${loopHeads(house.heads)}
-        `)
-    })
 }
 
-logHouseInfo(hogwartsHouses)
+slytherinRules(hogwartsHouses);
+
+
+
+
+
+
+// const loopHeads = (heads) => {
+//     let headsString = ' '
+//     for(const head of heads) {
+//         headsString += `${head.firstName} ${head.firstName}\n`
+//     }
+//     return headsString;
+// }
+// const logHouseInfo = (houses) => {
+//     //loop through each item in the house array
+//     houses.forEach((house) => {
+//         console.log(`
+//         Hogwarts House: ${house.name}
+//         Animal: ${house.animal}
+//         Founder: ${house.founder}
+//         Common Room: ${house.commonRoom}
+//         House Head: \n${loopHeads(house.heads)}
+//         `)
+//     })
+// }
+//
+// logHouseInfo(hogwartsHouses)
+
+// Exercise 4: Write a function named averageSales that accepts an array of objects where each object represents a person, and has a sales property. The function should return the average of every object's sales property.
+
+// const salesTeam = [
+//     {name: 'Jim Halpert', sales: 100},
+//     {name: 'Dwight Schrute', sales: 50},
+//     {name: 'Andy Bernard', sales: 150},
+// ];
+//
+//
+// function averageSales(salesAvg) {
+//     let runningTotal = 0
+//      for(const sale of salesAvg) {
+//          runningTotal += sale.sales
+//          console.log(sale.sales);
+//      }
+//     console.log(runningTotal);
+//      const avg = runningTotal/salesAvg.length
+//     console.log(avg);
+// }
+
+// averageSales(salesTeam);
+
+// Exercise 3: Write a function named remove12s that accepts an array of numbers and returns an array with all the same numbers except for 12.
+
+// const nums = [12, 1, 2, 5, 10, 12];
+// const nums1 = [30, 2, 6, 9, 12];
+//
+// function remove12s (dogturd) {
+//     let newArray = []
+//     for (const turd of dogturd) {
+//         if (turd !== 12) {
+//         newArray.push(turd)
+//         }
+//     }
+//     console.log(newArray);
+// }
+//
+// remove12s(nums1)
