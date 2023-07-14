@@ -812,21 +812,21 @@ const hogwartsHouses = [
     }
 ]
 
-function slytherinRules (hogwartsHousesArray) {
-    for(const houseInfo of hogwartsHousesArray) {
-        console.log(`house name: ${houseInfo.name}`);
-        console.log(houseInfo.animal)
-        console.log(houseInfo.founder)
-        console.log(houseInfo.commonRoom)
-
-        console.log(houseInfo)
-    }
-}
-
-slytherinRules(hogwartsHouses);
-
-
-
+// function slytherinRules (hogwartsHousesArray) {
+//     for(const houseInfo of hogwartsHousesArray) {
+//         console.log(`house name: ${houseInfo.name}`);
+//         console.log(houseInfo.animal)
+//         console.log(houseInfo.founder)
+//         console.log(houseInfo.commonRoom)
+//
+//         console.log(houseInfo)
+//     }
+// }
+//
+// slytherinRules(hogwartsHouses);
+//
+//
+//
 
 
 
@@ -890,3 +890,33 @@ slytherinRules(hogwartsHouses);
 // }
 //
 // remove12s(nums1)
+
+
+
+// write a function called removeEvens that takes an array of numbers and removes any even number from the array
+
+// write a function
+//check array by adding new variable and inputting it into old array
+// check if any number is even
+// remove evens
+// return the new array
+
+const sampleArray = [1, 3, 4, 8, 7, 9]
+
+function removeEvens (oldArray) {
+    if (!Array.isArray(oldArray)) {
+        return false;
+    }
+    let newNumber = []
+    for (const number of oldArray) {
+        if (!isNaN(number)) {
+            return false
+        }
+        if (number % 2 !== 0) {
+            newNumber.push(number)
+        }
+    }
+    return newNumber;
+}
+
+removeEvens(sampleArray)
