@@ -11,12 +11,39 @@
 </div>
 
 <script>
-  (function () {
-    "use strict";
-  $ajax("/data.blog.json").done(function ()) {
+  $(() => {
+      //Global Variables
+      const loadBlogPost =
 
-  }
-  });
+
+
+
+      //Functions
+      function loadBlogpost () {
+          $.ajax('data/blog.json').done((data) => {
+              console.log(data);
+              renderBlogPosts(data);
+          });
+      }
+
+      function renderBlogPosts(BlogPostList) {
+          blogPostsContainer.innerHTML = '';
+          for (const blogPost of blogPostsList) {
+              const blogPostContainer = document.createElement('div');
+              blogPostContainer.innerHTML = `
+                <h1>${blogPost.title}</h1>
+                <h2>${blogPost.date}</h2>
+                <p>${blogPost.content}</p>
+                <p>${blogPost.categories}</p>
+
+              `
+          }
+          blogPostContainer.appendChild(blogPostContainer);
+      }
+      //Events
+
+
+  })
 </script>
 </body>
 </html>
