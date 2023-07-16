@@ -1,0 +1,24 @@
+:root {
+    --primary-text: #395ccc;
+    --primary-color: #6faccb;
+    --secondary-color: ;
+    --primary-font: 'Roboto', sans-serif;
+    --background: url("./img/Clouds.jpeg");
+
+}
+
+body {
+    font-family: var(--primary-font);
+    background-image: var(--background);
+    color: var(--primary-text);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+}
+
