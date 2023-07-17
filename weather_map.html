@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Open Weather Forecast API</title>
     <link rel="stylesheet" href="css/weather_map.css">
+    <link rel="stylesheet" href="css/layout.css">
 
 
 </head>
@@ -12,26 +13,22 @@
     <div class="container">
         <div class="row header">
             <h1>Weather App</h1>
-            <div id="city-name"></div>
+            <div id="city-name">Current City: </div>
         </div>
-        <div class="row ">
-            <div class="card-1 row d-flex justify-space-between">
-                <div id="dateTime"></div>
-                <div id="min-max-temp"></div>
-                <div id="description"></div>
-                <div id="humidity"></div>
-                <div id="wind"></div>
-                <div id="pressure"></div>
-
-                <div id="map" style="height: 30rem; width: 50%"></div>
+        <div class="row">
+            <div class="row search-bar align-center">
+                <p><strong>Place</strong></p>
+                <input placeholder="Type City Name here">
+                <button>Find</button>
             </div>
         </div>
-        <div>
-            <div class="card-2"></div>
-            <div class="card-3"></div>
-            <div class="card-4"></div>
-            <div class="card-5"></div>
+        <div class="row d-flex justify-space-between">
+                <div class="row top-card-info"></div>
+                <div class="column map-box">
+                    <div id="map" style="height: 20rem; width: 50rem"></div>
+                </div>
         </div>
+        <div class="row gap-5 bottom-card-info"></div>
     </div>
 </div>
 
@@ -45,7 +42,7 @@
 
 <!-- include API key file -->
 <script src="js/keys.js"></script>
-<script src="js/ent-weather-map-demo.js"></script>
+<script src="js/weather_map.js"></script>
 <!-- additional code here -->
 
 <!-- used to import mapbox files -->

@@ -1,10 +1,9 @@
 :root {
     --primary-text: #395ccc;
-    --primary-color: #6faccb;
-    --secondary-color: ;
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
     --primary-font: 'Roboto', sans-serif;
     --background: url("./img/Clouds.jpeg");
-
 }
 
 body {
@@ -19,6 +18,43 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 50px;
+    margin: 0 25px;
 }
+
+.weather-boxes {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    margin: 2rem;
+    font-size: medium;
+    text-align: center;
+    color: #000000;
+    font-weight: lighter;
+}
+
+.map-box {
+    margin: 2rem;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+
+button {
+    border: 2px solid #1c3aad;
+    border-radius: 5px;
+    background-color: var(--primary-text);
+    width: 3rem;
+    height: 1.5rem;
+    color: #fff;
+    margin: .5rem;
+}
+
+input {
+    border-radius: 5px;
+    width: 15rem;
+    height: 1rem;
+    margin: .5rem;
+    border-color: var(--primary-color);
+}
+
+
+
 
