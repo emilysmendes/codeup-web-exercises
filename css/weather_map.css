@@ -1,52 +1,59 @@
 :root {
     --primary-text: #395ccc;
+    --primary-text-dark: #395ccc;
     --primary-color: #ffffff;
+    --primary-color-dark: #ffffff;
     --secondary-color: #000000;
+    --secondary-color-dark: #fff;
     --primary-font: 'Roboto', sans-serif;
     --background: url("./img/Clouds.jpeg");
 }
 
+
 body {
-    font-family: var(--primary-font);
     background-image: var(--background);
     color: var(--primary-text);
     background-size: cover;
     background-attachment: fixed;
 }
-
-.dark-mode {
-    font-family: var(--primary-font);
-    background-image: url("img/storm clouds gif.gif");
+/* Dark Mode Theme */
+body[data-theme='dark-mode'] {
+    background-image: url("img/black rainfall.gif");
     background-repeat: repeat;
-    color: var(--primary-color);
-    background-size: cover;
-    background-attachment: fixed;
-    .weather-boxes {color: #ffffff}
+    color: var(--primary-color-dark);
 }
 
 .header {
     display: flex;
-    justify-content: space-between;
+    font-size: x-large;
+    /*justify-content: space-between;*/
     align-items: center;
-    margin: 0 25px;
+}
+body[data-theme='dark-mode'] .header, .weather-boxes {
+    color: var(--primary-color-dark);
 }
 
 .weather-boxes {
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
     border-radius: 10px;
-    margin: 2rem;
+    margin: 1rem;
     font-size: medium;
     text-align: center;
     color: #000000;
-    font-weight: lighter;
+    font-weight: normal;
     padding: 2rem;
 }
 
+body[data-theme='dark-mode'] .weather-boxes {
+    color: var(--primary-color-dark);
+    font-weight: bold;
+}
 
 .map-box {
-    margin: 3rem;
+    margin: 4rem;
     border: 2px solid #ffffff;
     border-radius: 10px;
+    height: auto
 }
 
 #search-button {
@@ -57,6 +64,10 @@ body {
     height: 1.5rem;
     color: #fff;
     margin: .5rem;
+}
+body[data-theme='dark-mode'] #dark-mode {
+    background-color: #525252;
+
 }
 
 #dark-mode {
@@ -77,4 +88,7 @@ input {
     border-color: var(--primary-color);
 }
 
+.search-bar {
+    font-size: large;
+}
 

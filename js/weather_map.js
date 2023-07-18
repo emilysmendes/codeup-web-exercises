@@ -18,6 +18,8 @@ $(() => {
     const ALAMO_COORDINATES = ['29.4260', '-98.4861'];
     const URL = getWeatherURL(...ALAMO_COORDINATES);
 
+    const darkModeSetting = document.getElementById("#dark-mode")
+
     ///////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// FUNCTIONS ///////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////
@@ -42,6 +44,7 @@ $(() => {
 
     function getWeatherURL(lat, lon) {
         return `${OPEN_WEATHER_URL}?lat=${lat}&lon=${lon}&units=imperial&appid=${OPEN_WEATHER_APPID}`;
+
     }
 
 
@@ -71,6 +74,7 @@ $(() => {
         <div class= "weather-boxes">
             <p>${todaysWeather.list[0].dt_txt}</p>
              <p>${todaysWeather.list[0].main.temp_min}/${todaysWeather.list[0].main.temp_max}</p>
+             <img src="http://openweathermap.org/img/w/${todaysWeather.list[0].weather[0].icon}.png"
              <p>Description: ${todaysWeather.list[0].weather[0].description}</p>
              <p>Humidity: ${todaysWeather.list[0].main.humidity}</p>
              <p>Wind: ${todaysWeather.list[0].wind.speed}</p>
@@ -90,6 +94,7 @@ $(() => {
             <div class="weather-boxes">
                 <p>${weatherInformation.list[i].dt_txt}</p>
                 <p>${weatherInformation.list[i].main.temp_min}/${weatherInformation.list[i].main.temp_max}</p>
+                <img src="http://openweathermap.org/img/w/${weatherInformation.list[i].weather[0].icon}.png">
                 <p>Description: ${weatherInformation.list[i].weather[0].description}</p>
                 <p>Humidity: ${weatherInformation.list[i].main.humidity}</p>
                 <p>Wind: ${weatherInformation.list[i].wind.speed}</p>
@@ -104,10 +109,10 @@ $(() => {
 
     function getCurrentCity(lat, lon) {
         console.log("inside getCurrentCity")
-        console.log(`lat: ${lat}, lon: ${lon}`)
         const url = getWeatherURL(lat, lon);
         $.get(url).done((data) => {
             const currentCity = data.city.name;
+            console.log(data.city.name);
             $('#city-name').html(currentCity)
         });
     }
@@ -129,8 +134,8 @@ $(() => {
 
             map.flyTo({
                 center: data,
-                zoom: 14,
-                speed: 2,
+                zoom: 10,
+                speed: 1.25,
                 essential: true
             });
             getCurrentCity(data[1],data[0]);
@@ -139,14 +144,23 @@ $(() => {
         });
     });
 
-    $('#search-input').keypress(function (e) {
-        if (e.keyCode === 13) {
-            $('#search-input').trigger('click');
+    // $('#search-input').keypress(function (e) {
+    //     if (e.keyCode === 13) {
+    //         $('#search-input').trigger('click');
+    //     }
+    // })
+
+    const darkMode = document.querySelector("#dark-mode")
+    darkMode.addEventListener("click", () => {
+        const body = document.querySelector("body");
+        let mode = body.getAttribute('data-theme');
+        if (mode === "dark-mode") {
+            body.removeAttribute("data-theme")
+        } else {
+            body.setAttribute("data-theme", "dark-mode")
         }
     })
-    // $('#dark-mode').click(function (e) {
-    //
-    // })
+
 
 })
 
