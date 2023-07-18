@@ -854,25 +854,25 @@ const hogwartsHouses = [
 
 // Exercise 4: Write a function named averageSales that accepts an array of objects where each object represents a person, and has a sales property. The function should return the average of every object's sales property.
 
-// const salesTeam = [
-//     {name: 'Jim Halpert', sales: 100},
-//     {name: 'Dwight Schrute', sales: 50},
-//     {name: 'Andy Bernard', sales: 150},
-// ];
-//
-//
-// function averageSales(salesAvg) {
-//     let runningTotal = 0
-//      for(const sale of salesAvg) {
-//          runningTotal += sale.sales
-//          console.log(sale.sales);
-//      }
-//     console.log(runningTotal);
-//      const avg = runningTotal/salesAvg.length
-//     console.log(avg);
-// }
+const salesTeam = [
+    {name: 'Jim Halpert', sales: 100},
+    {name: 'Dwight Schrute', sales: 50},
+    {name: 'Andy Bernard', sales: 150},
+];
 
-// averageSales(salesTeam);
+
+function averageSales(salesAvg) {
+    let runningTotal = 0
+     for(const sale of salesAvg) {
+         runningTotal += sale.sales
+         console.log(sale.sales);
+     }
+    console.log(runningTotal);
+     const avg = runningTotal/salesAvg.length
+    console.log(avg);
+}
+
+averageSales(salesTeam);
 
 // Exercise 3: Write a function named remove12s that accepts an array of numbers and returns an array with all the same numbers except for 12.
 
@@ -900,23 +900,23 @@ const hogwartsHouses = [
 // check if any number is even
 // remove evens
 // return the new array
-
-const sampleArray = [1, 3, 4, 8, 7, 9]
-
-function removeEvens (oldArray) {
-    if (!Array.isArray(oldArray)) {
-        return false;
-    }
-    let newNumber = []
-    for (const number of oldArray) {
-        if (!isNaN(number)) {
-            return false
-        }
-        if (number % 2 !== 0) {
-            newNumber.push(number)
-        }
-    }
-    return newNumber;
-}
-
-removeEvens(sampleArray)
+//
+// const sampleArray = [1, 3, 4, 8, 7, 9]
+//
+// function removeEvens (oldArray) {
+//     if (!Array.isArray(oldArray)) {
+//         return false;
+//     }
+//     let newNumber = []
+//     for (const number of oldArray) {
+//         if (!isNaN(number)) {
+//             return false
+//         }
+//         if (number % 2 !== 0) {
+//             newNumber.push(number)
+//         }
+//     }
+//     return newNumber;
+// }
+//
+// removeEvens(sampleArray)
