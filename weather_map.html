@@ -5,22 +5,25 @@
     <title>Open Weather Forecast API</title>
     <link rel="stylesheet" href="css/weather_map.css">
     <link rel="stylesheet" href="css/layout.css">
-
-
 </head>
+
 <body>
 <div class="page-wrapper container">
     <div class="container">
-        <div class="row header">
+        <div class="row header justify-center justify-space-between">
             <h1>Weather App</h1>
-            <div id="city-name">Current City: </div>
+            <div style="font-size: x-large; font-weight: bold; text-align: center">
+            <div>Current City: </div>
+            <div id="city-name">San Antonio</div>
+            </div>
         </div>
         <div class="row">
             <div class="row search-bar align-center">
                 <p><strong>Place</strong></p>
-                <input placeholder="Type City Name here">
-                <button>Find</button>
+                <input placeholder="Type City Name here" id="search-input">
+                <button id="search-button">Find</button>
             </div>
+            <button class="row align-center justify-end" id="dark-mode" onclick="darkModeActivated()">Dark Mode</button>
         </div>
         <div class="row d-flex justify-space-between">
                 <div class="row top-card-info"></div>
@@ -28,7 +31,7 @@
                     <div id="map" style="height: 20rem; width: 50rem"></div>
                 </div>
         </div>
-        <div class="row gap-5 bottom-card-info"></div>
+        <div class="row justify-space-between bottom-card-info"></div>
     </div>
 </div>
 

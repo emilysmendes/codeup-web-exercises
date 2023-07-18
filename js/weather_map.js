@@ -45,9 +45,10 @@ $(() => {
     }
 
 
-    // Request for displaying card info
+    // Requests for displaying info
     $.ajax(getWeatherURL(...ALAMO_COORDINATES))
         .done((data) => {
+            console.log(data);
         })
         .fail(console.error);
 
@@ -55,6 +56,10 @@ $(() => {
     $.ajax(URL).done((data) => {
         renderWeatherCards(data);
         renderTodayWeather(data);
+    })
+
+    $.ajax(URL).done((data) => {
+        getCurrentCity(data);
     })
 
 
@@ -75,11 +80,10 @@ $(() => {
         todayContainer.appendChild(todayWeatherCard);
     }
 
-
     // Function for Bottom row weather cards
     function renderWeatherCards (weatherInformation) {
         const weatherCardsContainer = document.querySelector(".bottom-card-info")
-        for (let i = 1; i < weatherInformation.list.length; i += 8) {
+        for (let i = 8; i < weatherInformation.list.length; i += 8) {
             console.log(weatherInformation.list[i])
             const weatherCard = document.createElement('div');
             weatherCard.innerHTML = `
@@ -97,11 +101,52 @@ $(() => {
 
     }
 
+
+    function getCurrentCity(lat, lon) {
+        console.log("inside getCurrentCity")
+        console.log(`lat: ${lat}, lon: ${lon}`)
+        const url = getWeatherURL(lat, lon);
+        $.get(url).done((data) => {
+            const currentCity = data.city.name;
+            $('#city-name').html(currentCity)
+        });
+    }
+
+
     ///////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////// EVENTS ///////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////
 
+    $('#search-button').click(function () {
+        const userInput = $('#search-input').val();
+        geocode(userInput, MAPBOX_TOKEN).then((data) => {
+            const popup = new mapboxgl.Popup()
+            const marker = new mapboxgl.Marker()
+                .setLngLat(data)
+                .setPopup(popup)
+                .addTo(map);
+            popup.addTo(map);
 
+            map.flyTo({
+                center: data,
+                zoom: 14,
+                speed: 2,
+                essential: true
+            });
+            getCurrentCity(data[1],data[0]);
+            renderWeatherCards(data[1],data[0]);
+            renderTodayWeather(data[0], data[1]);
+        });
+    });
+
+    $('#search-input').keypress(function (e) {
+        if (e.keyCode === 13) {
+            $('#search-input').trigger('click');
+        }
+    })
+    // $('#dark-mode').click(function (e) {
+    //
+    // })
 
 })
 
