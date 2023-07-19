@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button style="height: 50px; width: 100px" id="change-bg-btn">Change Color</button>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+<script>
+    "use strict";
+                    //JQUERY
+        const favColor = 'purple';
+
+        $('#change-bg-btn').on('click', () => {
+            $('body').css('background-color', favColor)
+        })
+
+                    //Vanilla JS
+    const changeColorBtn = document.querySelector('#change-bg-btn');
+    const body = document.querySelector('body')
+
+        changeColorBtn.addEventListener('click', ()=> {
+            body.style.background = 'purple';
+        })
+
+
+
+</script>
+
+</body>
+</html>

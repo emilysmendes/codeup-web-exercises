@@ -75,6 +75,7 @@ $(() => {
         console.log(todaysWeather);
         const todayContainer = document.querySelector(".top-card-info")
         const todayWeatherCard = document.createElement('div');
+        todayContainer.innerHTML ="";
         todayWeatherCard.innerHTML = `
         <div class= "weather-boxes">
             <p>${todaysWeather.list[0].dt_txt}</p>
@@ -92,7 +93,8 @@ $(() => {
     // Function for Bottom row weather cards
     function renderWeatherCards (weatherInformation) {
         console.log(weatherInformation);
-        const weatherCardsContainer = document.querySelector(".bottom-card-info")
+        const weatherCardsContainer = document.querySelector(".bottom-card-info");
+        weatherCardsContainer.innerHTML = "";
         for (let i = 8; i < weatherInformation.list.length; i += 8) {
             console.log(weatherInformation.list[i])
             const weatherCard = document.createElement('div');
@@ -117,10 +119,10 @@ $(() => {
         console.log("inside getCurrentCity")
         const url = getWeatherURL(lon, lat);
         $.get(url).done((data) => {
-            console.log(data)
-            // const currentCity = data.city.name;
-            // console.log(data.city.name);
-            // $('#city-name').html(currentCity)
+            renderWeatherCards(data);
+            renderTodayWeather(data);
+            const currentCity = data.city.name;
+            $('#city-name').html(currentCity)
         })
         ;
     }
@@ -159,8 +161,6 @@ $(() => {
                 essential: true
             });
             getCurrentCity(data[1],data[0]);
-            // renderWeatherCards(data[1],data[0]);
-            // renderTodayWeather(data[0], data[1]);
         });
     });
 
