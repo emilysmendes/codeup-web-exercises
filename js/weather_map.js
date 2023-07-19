@@ -17,8 +17,8 @@ $(() => {
     // Simple way to create URL for request based on coordinates
     const ALAMO_COORDINATES = ['29.4260', '-98.4861'];
     const URL = getWeatherURL(...ALAMO_COORDINATES);
-
-    const darkModeSetting = document.getElementById("#dark-mode")
+    //
+    // const darkModeSetting = document.getElementById("#dark-mode")
 
     ///////////////////////////////////////////////////////////////////////////////
     ///////////////////////////// FUNCTIONS ///////////////////////////////////////
@@ -49,11 +49,11 @@ $(() => {
 
 
     // Requests for displaying info
-    $.ajax(getWeatherURL(...ALAMO_COORDINATES))
-        .done((data) => {
-            console.log(data);
-        })
-        .fail(console.error);
+    // $.ajax(getWeatherURL(...ALAMO_COORDINATES))
+    //     .done((data) => {
+    //         console.log(data);
+    //     })
+    //     .fail(console.error);
 
 
     $.ajax(URL).done((data) => {
@@ -65,9 +65,14 @@ $(() => {
         getCurrentCity(data);
     })
 
+    $.ajax(URL).done((data) => {
+        goToNewCity(data);
+    })
+
 
     // Function for top row weather card
     function renderTodayWeather(todaysWeather) {
+        console.log(todaysWeather);
         const todayContainer = document.querySelector(".top-card-info")
         const todayWeatherCard = document.createElement('div');
         todayWeatherCard.innerHTML = `
@@ -86,6 +91,7 @@ $(() => {
 
     // Function for Bottom row weather cards
     function renderWeatherCards (weatherInformation) {
+        console.log(weatherInformation);
         const weatherCardsContainer = document.querySelector(".bottom-card-info")
         for (let i = 8; i < weatherInformation.list.length; i += 8) {
             console.log(weatherInformation.list[i])
@@ -107,17 +113,31 @@ $(() => {
     }
 
 
-    function getCurrentCity(lat, lon) {
+    function getCurrentCity(lon, lat) {
         console.log("inside getCurrentCity")
-        const url = getWeatherURL(lat, lon);
+        const url = getWeatherURL(lon, lat);
         $.get(url).done((data) => {
-            const currentCity = data.city.name;
-            console.log(data.city.name);
-            $('#city-name').html(currentCity)
-        });
+            console.log(data)
+            // const currentCity = data.city.name;
+            // console.log(data.city.name);
+            // $('#city-name').html(currentCity)
+        })
+        ;
     }
 
-
+    function goToNewCity (data) {
+        console.log(data.city.coord.lon)
+        console.log(data.city.coord.lat)
+        console.log("inside go to new city")
+        const lat = data.city.coord.lat
+        const lon = data.city.coord.lon
+        const url = getWeatherURL(lon, lat)
+        console.log(url)
+        $.ajax(url).done((data) => {
+            renderWeatherCards(data);
+            renderTodayWeather(data)
+        })
+    }
     ///////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////// EVENTS ///////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////
@@ -139,16 +159,11 @@ $(() => {
                 essential: true
             });
             getCurrentCity(data[1],data[0]);
-            renderWeatherCards(data[1],data[0]);
-            renderTodayWeather(data[0], data[1]);
+            // renderWeatherCards(data[1],data[0]);
+            // renderTodayWeather(data[0], data[1]);
         });
     });
 
-    // $('#search-input').keypress(function (e) {
-    //     if (e.keyCode === 13) {
-    //         $('#search-input').trigger('click');
-    //     }
-    // })
 
     const darkMode = document.querySelector("#dark-mode")
     darkMode.addEventListener("click", () => {
