@@ -1,21 +1,22 @@
 :root {
-    --primary-text: #395ccc;
+    --primary-text: #cbe2ff;
     --primary-text-dark: #395ccc;
     --primary-color: #ffffff;
     --primary-color-dark: #ffffff;
     --secondary-color: #000000;
     --secondary-color-dark: #fff;
-    --primary-font: 'Roboto', sans-serif;
+    --primary-font: 'playfair display', sans-serif;
     --background: url("./img/Clouds.jpeg");
 }
 
 
 body {
     background-image: var(--background);
-    color: var(--primary-text);
+    color: var(--primary-color);
     background-size: cover;
     background-attachment: fixed;
     justify-content: stretch;
+    font-weight: bold;
 }
 /* Dark Mode Theme */
 body[data-theme='dark-mode'] {
@@ -45,30 +46,35 @@ body[data-theme='dark-mode'] .header, .weather-boxes {
     padding: 2rem;
 }
 
+
 body[data-theme='dark-mode'] .weather-boxes {
     color: var(--primary-color-dark);
     font-weight: bold;
 }
 
+
 .map-box {
-    margin: 4rem;
-    border: 2px solid #ffffff;
+    margin: 2rem;
+    border: 1px solid #ffffff;
     border-radius: 10px;
     height: auto
 }
 
 #search-button {
-    border: 2px solid #1c3aad;
+    border: 2px solid #ffffff;
     border-radius: 5px;
-    background-color: var(--primary-text);
-    width: 3rem;
-    height: 1.5rem;
+    background-color: #87CEFA;
+    width: 6rem;
+    height: 2rem;
     color: #fff;
     margin: .5rem;
 }
 body[data-theme='dark-mode'] #dark-mode {
     background-color: #525252;
+}
 
+body[data-theme='dark-mode'] #search-button {
+    background-color: #525252;
 }
 
 #dark-mode {
@@ -78,18 +84,17 @@ body[data-theme='dark-mode'] #dark-mode {
     height: 3rem;
     color: #fff;
     margin: .5rem;
-    background-color: lightskyblue;
+    background-color: #87CEFA;
 }
 
 input {
-    border-radius: 5px;
-    width: 15rem;
-    height: 1rem;
+    border-radius: 10px;
+    width: 40rem;
+    height: 2rem;
     margin: .5rem;
     border-color: var(--primary-color);
 }
 
-.search-bar {
-    font-size: large;
-}
+
+
 
