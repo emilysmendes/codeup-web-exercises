@@ -2,9 +2,7 @@
 
 $(() => {
 
-    ///////////////////////////////////////////////////////////////////////////////////
-    /////////////////////////////// GLOBAL VARIABLES //////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////
+    // GLOBAL VARIABLES
 
     const map = initializeMap();
     const marker = createMarker();
@@ -17,12 +15,13 @@ $(() => {
     // Simple way to create URL for request based on coordinates
     const ALAMO_COORDINATES = ['29.4260', '-98.4861'];
     const URL = getWeatherURL(...ALAMO_COORDINATES);
-    //
-    // const darkModeSetting = document.getElementById("#dark-mode")
 
-    ///////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////// FUNCTIONS ///////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+    // FUNCTIONS
 
     function initializeMap() {
         mapboxgl.accessToken = MAPBOX_TOKEN;
@@ -47,13 +46,6 @@ $(() => {
 
     }
 
-
-    // Requests for displaying info
-    // $.ajax(getWeatherURL(...ALAMO_COORDINATES))
-    //     .done((data) => {
-    //         console.log(data);
-    //     })
-    //     .fail(console.error);
 
 
     $.ajax(URL).done((data) => {
@@ -114,7 +106,7 @@ $(() => {
 
     }
 
-
+    // Function for displaying current city
     function getCurrentCity(lon, lat) {
         console.log("inside getCurrentCity")
         const url = getWeatherURL(lon, lat);
@@ -127,6 +119,7 @@ $(() => {
         ;
     }
 
+    // Function for going to new city
     function goToNewCity (data) {
         console.log(data.city.coord.lon)
         console.log(data.city.coord.lat)
@@ -140,10 +133,12 @@ $(() => {
             renderTodayWeather(data)
         })
     }
-    ///////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////// EVENTS ///////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+    // EVENTS
     $('#search-button').click(function () {
         const userInput = $('#search-input').val();
         geocode(userInput, MAPBOX_TOKEN).then((data) => {
