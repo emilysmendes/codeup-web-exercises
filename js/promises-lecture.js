@@ -32,14 +32,47 @@ const getFilm = (url) => {
         })
 }
 
-(() => { /* IIFE (Immediately invoked function expression. With IIFE statements, we are able to immediately run function without having to use JQuery or call the function itself */
-    getPerson(1) /* by changing the number you can cycle through the different objects as if you are using an index */.then((person) => {
-        /* after pushing the returned data outside of the stream, you must now add conditionals to your returned data */
-        console.log(person);
-        })
-    getFilm(person.films[0]/* previously this was called URL but now we need to call the data*/).then((data) => {
-            console.log(film);
+// (() => { /* IIFE (Immediately invoked function expression. With IIFE statements, we are able to immediately run function without having to use JQuery or call the function itself */
+// getPerson(1) /* by changing the number you can cycle through the different objects as if you are using an index */.then((person) => {
+//     /* after pushing the returned data outside of the stream, you must now add conditionals to your returned data */
+//     console.log(person);
+//     })
+// getFilm(person.films[0]/* previously this was called URL but now we need to call the data*/).then((data) => {
+//         console.log(film);
+// })
+// })();
+
+// ASYNC FUNCTION
+/* traditional declaration , the async comes first */
+async function getFilm(url {
+}
+
+)
+
+/* arrow declaration*/
+const getFilm = async (url) => {
+
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "applications/json"
+        }
+    }
+    const response = await fetch(url, options);
+    const data = response.json();
+    return data;
+}
+(() => {
+    getFilm(/*insert URL here*/ 'https://swampi.dev/api/').then((film) => {
+        console.log(film);
+
     })
-
-
 })();
+
+//     ^^^^^^ OR vvvvvvvvvvv //
+
+(async ()=> {
+    const luke = await getFilm('URL');
+    console.log(luke)
+})();
+
