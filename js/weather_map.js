@@ -1,3 +1,18 @@
+/*
+* First step to building a project would be to think of the goal and the steps it takes to get there
+* For  example, the weather project
+* */
+
+
+
+
+
+
+
+
+
+
+
 "use strict";
 
 $(() => {
@@ -51,15 +66,11 @@ $(() => {
     $.ajax(URL).done((data) => {
         renderWeatherCards(data);
         renderTodayWeather(data);
-    })
-
-    $.ajax(URL).done((data) => {
+        goToNewCity(data);
         getCurrentCity(data);
     })
 
-    $.ajax(URL).done((data) => {
-        goToNewCity(data);
-    })
+
 
 
     // Function for top row weather card
