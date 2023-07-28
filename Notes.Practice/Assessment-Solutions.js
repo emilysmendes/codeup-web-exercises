@@ -78,6 +78,7 @@ const convertNameToObject = (string) => {
     }
     return nameObject;
 }
+
 convertNameToObject();
 
 // Write a function named countVowels that accepts a string and returns the number of vowels in that string. (Don't worry about or count "y" as a vowel)
@@ -122,3 +123,4 @@ const capitalizeName = (string) => {
     return capitalizedFirstName + capitalizedLastName;
 }
 capitalizeName();
+

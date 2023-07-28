@@ -71,16 +71,16 @@
     ]
 
 
-    // function hebDiscountString(shopper) {
-    //  if(shopper.amount > 200) {
-    //      console.log ((shopper.name)  + " spent " + (shopper.amount)+ ".", "You got the discount! Your new total is " + ($(shopper.amount)* 0.88).toFixed(2), "You saved: " + $((shopper.amount) * 0.12.toFixed(2)));
-    //  } else {
-    //      console.log("You didn't get the discount. Your total is: " +  (shopper.amount));
-    //  }
-    //  }
-    //
-    //
-    //  hebDiscountString(shopper);
+    function hebDiscountString(shopper) {
+     if(shopper.amount > 200) {
+         console.log ((shopper.name)  + " spent " + (shopper.amount)+ ".", "You got the discount! Your new total is " + ($(shopper.amount)* 0.88).toFixed(2), "You saved: " + $((shopper.amount) * 0.12.toFixed(2)));
+     } else {
+         console.log("You didn't get the discount. Your total is: " +  (shopper.amount));
+     }
+     }
+
+
+     hebDiscountString(shopper);
 
 
     /** TODO:
